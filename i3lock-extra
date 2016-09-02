@@ -69,6 +69,7 @@ main() {
 	# Restart i3lock on non-zero exit code by default.
 	f_secloop=1
 
+	i3lock_args=()
 	while (( $# )); do
 		case "$1" in
 			--help|-h) usage; return 0;;
@@ -86,7 +87,7 @@ main() {
 
 			--unsecure) f_secloop=0;;
 
-			--) shift; break;;
+			--) shift; i3lock_args="$@"; break;;
 			-*)
 				err "Unknown key: $1"
 				usage
@@ -116,11 +117,11 @@ main() {
 	image_prepare
 
 	if (( f_secloop )); then
-		until i3lock -n -t -i "$image_file"; do
+		until i3lock -n -t -i "$image_file" "${i3lock_args[@]}"; do
 			true
 		done
 	else
-		i3lock -n -t -i "$image_file"
+		i3lock -n -t -i "$image_file" "${i3lock_args[@]}"
 	fi
 }
 
