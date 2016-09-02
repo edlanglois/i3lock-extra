@@ -56,7 +56,7 @@ image_prepare() {
 		convert "$image_file" "${convert_args[@]}" "$cfg_tmpdir/lockbg.png"
 		image_file="$cfg_tmpdir/lockbg.png"
 	fi
-	
+
 	if [[ "$overlay_image" ]]; then
 		convert -gravity center -composite -matte "$image_file" "$overlay_image" "$cfg_tmpdir/lockbg.png"
 		image_file="$cfg_tmpdir/lockbg.png"
