@@ -87,7 +87,7 @@ main() {
 
 			--unsecure) f_secloop=0;;
 
-			--) shift; i3lock_args="$@"; break;;
+			--) shift; i3lock_args=( "$@" ); break;;
 			-*)
 				err "Unknown key: $1"
 				usage
