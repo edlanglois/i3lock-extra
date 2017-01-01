@@ -117,11 +117,11 @@ main() {
 	image_prepare
 
 	if (( f_secloop )); then
-		until i3lock -n -t -i "$image_file" "${i3lock_args[@]}"; do
+		until i3lock -t -i "$image_file" "${i3lock_args[@]}"; do
 			true
 		done
 	else
-		i3lock -n -t -i "$image_file" "${i3lock_args[@]}"
+		i3lock -t -i "$image_file" "${i3lock_args[@]}"
 	fi
 }
 
