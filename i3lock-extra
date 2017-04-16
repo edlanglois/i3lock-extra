@@ -25,6 +25,8 @@ usage() {
 		                                          again to achieve the pixelize effect. For example, 4 means
 		                                          that it will be resized to 1/4 of the original and blown back up.
 		        --blur|-b                       Blur the image.
+		        --paint                         Apply a paint effect to the image.
+		                                          Best combined with pixelize.k
 	EOF
 }
 
@@ -50,6 +52,10 @@ image_prepare() {
 
 	if (( f_blur )); then
 		convert_args+=( -blur 4x8 )
+	fi
+
+	if (( f_paint )); then
+		convert_args+=( -spread 10 -paint 5 )
 	fi
 
 	if [[ "$convert_args" ]]; then
@@ -84,6 +90,7 @@ main() {
 			--pixelize|-p) f_pixelize=1;;
 			--pixelize-scale|-P) cfg_pixelize_scale=$2; shift;;
 			--blur|-b) f_blur=1;;
+			--paint) f_paint=1;;
 
 			--unsecure) f_secloop=0;;
 
