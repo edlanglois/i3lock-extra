@@ -26,7 +26,7 @@ usage() {
 		                                          that it will be resized to 1/4 of the original and blown back up.
 		        --blur|-b                       Blur the image.
 		        --paint                         Apply a paint effect to the image.
-		                                          Best combined with pixelize.k
+		                                          Best combined with pixelize.
 	EOF
 }
 
