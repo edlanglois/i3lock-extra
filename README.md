@@ -4,8 +4,8 @@ i3lock with the option to use a modified (blurred/pixellated) screenshot as
 the lock image.
 
 Originally written by
-[Jack L. Frost](https://git.fleshless.org/misc/tree/README.md), with some small
-modifications by me.
+[Jack L. Frost](https://git.fleshless.org/misc/tree/README.md).
+I added the --paint effect option.
 
 ## Licence
 The code is licenced under the MIT licence.
